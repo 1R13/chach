@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chach</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <svg width="800" height="800" id="field">
+
+
+    </svg>
+    <script src="js/main.js"></script>
+    <script>
+        let screen = document.getElementById('field')
+        let dim = window.innerHeight*.9
+        document.getElementById('field').setAttribute('width', Math.round(dim).toString())
+        document.getElementById('field').setAttribute('height', Math.round(dim).toString())
+
+
+
+        let field = new Field(screen, dim)
+        let pawn = new Pawn(field, 0)
+        let pawn2 = new Pawn(field, 1)
+        let pawn3 = new Pawn(field, 1)
+
+        let runner = new Runner(field, 1)
+
+        screen.appendChild(pawn.svg)
+        pawn2.move('D3')
+        pawn.move('C7')
+        pawn3.move('E4')
+
+        runner.move('D8')
+
+    </script>
+</body>
+</html>
